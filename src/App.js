@@ -14,11 +14,11 @@ function App() {
        online
       />
       <Contact 
-       name='Krin Burke' 
+       name='Christine Burke' 
        avatar='https://randomuser.me/api/portraits/women/84.jpg'
       />
       <Contact 
-       name='Landon Wells' 
+       name='Didier Moustache' 
        avatar='https://randomuser.me/api/portraits/men/0.jpg'
        online
       />
