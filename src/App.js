@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Contact from './components/Contact.js';
 import './components/Contact.css';
+import ContactList from './components/ContactList.js'
 
 
 
@@ -22,6 +23,7 @@ function App() {
        avatar='https://randomuser.me/api/portraits/men/0.jpg'
        online
       />
+      <ContactList/>
     </div>
   );
 }
