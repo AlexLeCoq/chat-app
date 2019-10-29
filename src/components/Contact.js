@@ -1,56 +1,34 @@
 import React from 'react';
 import './Contact.css';
 
-/*
-const online = {
-    IsOnline : true,
-    name: 'online',
-}
-
-function Contact(props) {
-    return (
-        <div className='Contact'>
-            
-            <img className='avatar' 
-                src={props.avatar} 
-                alt={props.name} />
-        <div>
-            <p className='name'>{props.name}</p>
-            
-            <p className='status'>
-                <span className={props.online ? 'status-online' : 'status-offline'}></span>
-                <span className='status-text'>{props.online ? 'online' : 'offline'}</span>
-            </p>
-        </div>
-        </div>
-    )
-}
-
-*/
-
-class Contact extends React.Component {
+class Contact extends React.Component{
     constructor(props) {
-        super(props)
-        this.state = {
-            count: false
-        };
-    };
-    render () {
-        return (
-        <div className='Contact'>
-            <img className='avatar' 
-                 src={props.avatar} 
-                 alt={props.name} />
-            <div>
-                <p className='name'>{props.name}</p>
-                <p className='status'>
-                    <span className={props.online ? 'status-online' : 'status-offline'}></span>
-                    <span className='status-text'>{props.online ? 'online' : 'offline'}</span>
-                </p>
-            </div>
-        </div>
-        )
+      super(props);
+      this.state = {
+        online: props.online,
+      };
     }
-}
+    render() {
+      return(
+        <div className='Contact'>
+            <img className='avatar'
+                 src={this.props.avatar} />
+            <figure>
+                <div className='name'>
+                    {this.props.name}
+                </div>
+                <div className='status'
+                    onClick={event =>{
+                    const newStatus= !this.state.online;
+                    this.setState({ online: newStatus} );
+                    console.log(this.state.online)}}>
+                {this.state.online ? <i className='status-online'></i> : <i className='status-offline'></i>}
+                {this.state.online ? 'Online' : 'Offline'}
+                </div>
+            </figure>
+        </div>
+      );
+    } 
+}  
 
 export default Contact;
