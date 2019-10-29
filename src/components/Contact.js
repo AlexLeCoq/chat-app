@@ -12,7 +12,8 @@ class Contact extends React.Component{
       return(
         <div className='Contact'>
             <img className='avatar'
-                 src={this.props.avatar} />
+                 src={this.props.avatar}>
+            </img>
             <figure>
                 <div className='name'>
                     {this.props.name}
